@@ -4,7 +4,7 @@ title: Pensa Privacy Policy
 
 # Pensa Privacy Policy
 
-**Last updated: 2026-09-23**
+**Last updated: 2026-10-04**
 
 ## The short version
 
@@ -15,7 +15,8 @@ page is processed on your device and stays on your device.
 The one exception is a setting you have to switch on yourself: sharing which shops use which
 techniques, and whether you added the item to your cart after seeing them, described in full
 below. It is off unless you turn it on. Pensa asks you about it once, on the card that opens when you
-install it, and again on your first in-page card only if you never answered there.
+install it, and again on your first in-page card (if you have turned cards on) only if you never
+answered there.
 
 With sharing off, nothing reaches any server. That is what the "zero outbound requests" test
 asserts against the compiled extension. With sharing on, reports go to exactly one address, a
@@ -27,10 +28,13 @@ and browse with the extension enabled and sharing off. There will be no requests
 
 ## What the extension does
 
-On the https sites where it runs, it reads the page to notice persuasion techniques:
+On the https sites where it runs, it reads the page to notice the techniques shops use to sell:
 countdown timers, limited-stock messages, crossed-out reference prices, preselected
-checkboxes, and similar. When you add something to a cart or begin checkout, it may show a
-small card with a question about what it noticed.
+checkboxes, and similar. It counts them on its toolbar icon, lists them in its popup, and
+collects a week of them into a report that it opens in a background tab once a week (switchable
+off in Settings), all built on your device from what is stored below. If
+you turn cards on in Settings, it may also show a small card when you add something to a cart or
+begin checkout.
 
 On any page with nothing to notice, it notices nothing and shows nothing. Shopping pages are
 not a list it holds; they are simply the pages where these techniques appear.
@@ -52,7 +56,7 @@ for pages Pensa has decided are shops. A page that is not a shop is never record
 
 These are recorded as you browse shops. When Pensa notices something it writes down what the
 page displayed, and it does so again when you add something to your cart or head to checkout,
-which is when it may also show you a card. Each distinct piece of copy is recorded once per page, not
+which is when it may also show you a card if you have turned cards on. Each distinct piece of copy is recorded once per page, not
 once per second, and a page it finds nothing on produces nothing.
 
 **Product history** (kept up to 90 days, at most 5,000 products):
@@ -65,6 +69,10 @@ once per second, and a page it finds nothing on produces nothing.
   which shops, and it never leaves your device.
 
 **This browsing session** (cleared when you close the browser):
+
+- For each open tab on a shop: which techniques its current page showed, with the matching
+  excerpt, so the toolbar count and the popup can list them. Replaced when the tab moves to
+  another page, deleted when the tab closes.
 
 - For each shop: which checkout stages you reached, and the prices on each (item price,
   subtotal, shipping, tax, total, and fee or add-on lines with their labels).
@@ -97,8 +105,8 @@ data").
 
 ## Site permissions
 
-**Pensa asks for access to all https websites at install time, and Chrome will tell you so in
-those words.** You should read that warning as accurate: the permission is broad, and it is
+**Pensa asks for access to all https websites at install time, and your browser (Chrome, Edge
+or Firefox) will tell you so in those words.** You should read that warning as accurate: the permission is broad, and it is
 granted the moment you install rather than site by site.
 
 This is a deliberate change from how Pensa previously worked, and it is worth being plain
@@ -115,7 +123,7 @@ does with it, and that is public and testable:
 
 - **Pensa never runs on banking, health, government, or webmail sites.** This is enforced in
   two independent layers: those hosts are excluded from the content script's match patterns,
-  so Chrome does not inject Pensa there at all; and the script additionally refuses to run on
+  so the browser does not inject Pensa there at all; and the script additionally refuses to run on
   any denied host before it reads anything. The list is in `src/shared/urlScore.ts` and the
   build fails if it is empty.
 - **Only `https` sites.** Plain `http` pages are outside the requested permission entirely.
@@ -126,10 +134,11 @@ does with it, and that is public and testable:
   record of having read it. On shops, what it keeps is listed under "What it stores".
 
 Pensa itself has no per-site off switch. You can turn detection off entirely, or switch off any
-individual technique, from its Settings page. To keep Pensa off particular sites, use Chrome's
-own control: open `chrome://extensions`, choose Pensa's Details, and set Site access to "On
-specific sites". Chrome then enforces that regardless of anything Pensa does. Uninstalling
-removes the permission entirely.
+individual technique, from its Settings page. To keep Pensa off particular sites, use your
+browser's own control. In Chrome, open `chrome://extensions`, choose Pensa's Details, and set
+Site access to "On specific sites"; in Edge, the same under `edge://extensions`. In Firefox,
+open `about:addons`, choose Pensa, and use its Permissions tab. The browser then enforces that
+regardless of anything Pensa does. Uninstalling removes the permission entirely.
 
 ## Optional: helping measure these techniques
 
@@ -143,6 +152,14 @@ in the question itself, or one click away under "More details", rather than behi
 somewhere else. The two answers are the same size and style, and neither is selected for you.
 Closing the install card answers nothing; closing the card without answering is recorded as no. Once answered, you
 are not asked again, and you can change your answer at any time in Settings.
+
+**In Firefox, Firefox asks as well.** Saying yes brings up Firefox's own data collection
+prompt, which lists what would be collected (browsing activity, website content and website
+activity), and sharing is on only if you allow it there too. Firefox only lets that prompt open
+from Pensa's own pages, so in Firefox the question is asked on the install card and in Settings,
+never on a card inside a shop's page. If you later remove the permission in `about:addons`,
+sharing switches off and anything waiting to be sent is deleted, the same as switching it off
+in Settings.
 
 While it is off, nothing is transmitted and nothing is even recorded for transmission. The
 queue is not filled and then withheld, because a queue that accumulates while you have said no
