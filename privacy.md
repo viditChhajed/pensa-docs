@@ -4,7 +4,7 @@ title: Pensa Privacy Policy
 
 # Pensa Privacy Policy
 
-**Last updated: 2026-10-04**
+**Last updated: 2026-10-06**
 
 ## The short version
 
@@ -15,8 +15,7 @@ page is processed on your device and stays on your device.
 The one exception is a setting you have to switch on yourself: sharing which shops use which
 techniques, and whether you added the item to your cart after seeing them, described in full
 below. It is off unless you turn it on. Pensa asks you about it once, on the card that opens when you
-install it, and again on your first in-page card (if you have turned cards on) only if you never
-answered there.
+install it, and again on your first in-page card only if you never answered there.
 
 With sharing off, nothing reaches any server. That is what the "zero outbound requests" test
 asserts against the compiled extension. With sharing on, reports go to exactly one address, a
@@ -32,9 +31,10 @@ On the https sites where it runs, it reads the page to notice the techniques sho
 countdown timers, limited-stock messages, crossed-out reference prices, preselected
 checkboxes, and similar. It counts them on its toolbar icon, lists them in its popup, and
 collects a week of them into a report that it opens in a background tab once a week (switchable
-off in Settings), all built on your device from what is stored below. If
-you turn cards on in Settings, it may also show a small card when you add something to a cart or
-begin checkout.
+off in Settings), all built on your device from what is stored below. When a page uses a
+technique at full strength (a standout), it shows a small card in the corner of that page. In
+Settings you can turn cards off, or also have one when you add something to a cart or begin
+checkout.
 
 On any page with nothing to notice, it notices nothing and shows nothing. Shopping pages are
 not a list it holds; they are simply the pages where these techniques appear.
@@ -55,8 +55,8 @@ for pages Pensa has decided are shops. A page that is not a shop is never record
   whatever that page displays, so an excerpt could in principle contain details shown there.
 
 These are recorded as you browse shops. When Pensa notices something it writes down what the
-page displayed, and it does so again when you add something to your cart or head to checkout,
-which is when it may also show you a card if you have turned cards on. Each distinct piece of copy is recorded once per page, not
+page displayed. It writes again when you add something to your cart or head to checkout, and
+when it shows you a card, to note that the card was shown. Each distinct piece of copy is recorded once per page, not
 once per second, and a page it finds nothing on produces nothing.
 
 **Product history** (kept up to 90 days, at most 5,000 products):

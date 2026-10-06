@@ -4,14 +4,13 @@ title: Pensa
 
 # Pensa
 
-A browser extension for people who sell online. While you browse other shops, it names the
+Competitor research for people who sell online. While you browse other shops, it names the
 selling techniques each page uses (crossed-out reference prices, countdown timers, limited-stock
-messages, spend thresholds, fees added at checkout), shows the shop's own wording, and says
-whether each one is worth copying on your own store: Copy it, Copy with care, or Avoid, with the
-rule behind it.
+messages, spend thresholds, fees added at checkout), shows the shop's own wording and the
+numbers behind it, and points out the standouts: techniques a shop is using at full strength.
 
-It reports what a page displayed. It never says a shop lied or broke a rule; the verdicts are
-about your store.
+It reports what a page displayed. It never says a shop lied or broke a rule, and it gives no
+verdict on whether to copy anything; that is your call.
 
 - [Privacy policy](./privacy.html)
 - [Source code](https://github.com/viditChhajed/pensa)
